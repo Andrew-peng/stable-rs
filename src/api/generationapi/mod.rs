@@ -34,7 +34,6 @@ impl GenerationApi {
             request_body.as_object_mut().unwrap().extend(options_obj);
         }
     
-        println!("{}", serde_json::to_string_pretty(&request_body).unwrap());
         let res = self
             .client
             .post(format!("https://api.stability.ai/v1/generation/{}/text-to-image", engine_id))
